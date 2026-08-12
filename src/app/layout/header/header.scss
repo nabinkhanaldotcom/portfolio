@@ -1,0 +1,274 @@
+/*
+ * ============================================================
+ * HEADER
+ * ============================================================
+ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+/*
+ * Keeps header content centered and prevents it from becoming
+ * excessively wide on large monitors.
+ */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: min(100% - 2rem, var(--page-max-width));
+  min-height: var(--header-height);
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * BRAND / NAME
+ * ============================================================
+ */
+
+.brand {
+  color: var(--color-text-primary);
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/*
+ * ============================================================
+ * DESKTOP NAVIGATION
+ * ============================================================
+ */
+
+.navigation {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+
+.navigation a {
+  position: relative;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 150ms ease,
+    transform 150ms ease;
+}
+
+
+.navigation a:hover,
+.navigation a:focus-visible {
+  color: var(--color-text-primary);
+}
+
+
+/*
+ * Small underline that appears when hovering over a navigation link.
+ */
+.navigation a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: -0.4rem;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-accent);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 150ms ease;
+}
+
+
+.navigation a:hover::after,
+.navigation a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+/*
+ * Temporary theme button.
+ *
+ * In the next step this will be replaced by our ThemeToggle component.
+ */
+.theme-placeholder {
+  padding: 0.5rem 0.8rem;
+
+  color: var(--color-text-primary);
+
+  font: inherit;
+
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+
+  cursor: pointer;
+}
+
+
+/*
+ * ============================================================
+ * MOBILE MENU BUTTON
+ * ============================================================
+ */
+
+.menu-button {
+  display: none;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  padding: 0;
+
+  background: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+
+/*
+ * The hamburger itself is built with three simple lines.
+ */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 5px;
+
+  width: 24px;
+
+  margin: 0 auto;
+}
+
+
+.menu-icon span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: var(--color-text-primary);
+
+  transition:
+    transform 200ms ease,
+    opacity 200ms ease;
+}
+
+
+/*
+ * When the menu opens:
+ *
+ * top line    -> rotates into \
+ * middle line -> disappears
+ * bottom line -> rotates into /
+ *
+ * Together they form an X.
+ */
+.menu-icon-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+
+.menu-icon-open span:nth-child(2) {
+  opacity: 0;
+}
+
+
+.menu-icon-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/*
+ * ============================================================
+ * MOBILE LAYOUT
+ * ============================================================
+ */
+
+@media (max-width: 768px) {
+  .header-container {
+    position: relative;
+  }
+
+
+  .menu-button {
+    display: block;
+  }
+
+
+  .navigation {
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+    left: -1rem;
+    right: -1rem;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 1rem;
+
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+
+  .navigation.navigation-open {
+    display: flex;
+  }
+
+
+  .navigation a,
+  .theme-placeholder {
+    width: 100%;
+
+    padding: 1rem;
+
+    text-align: left;
+  }
+
+
+  .navigation a::after {
+    display: none;
+  }
+
+
+  .theme-placeholder {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,1 +1,66 @@
-<p>header works!</p>
+<header class="site-header">
+  <div class="header-container">
+    <!--
+      Clicking the name returns the visitor to the top of the portfolio.
+    -->
+    <a
+      class="brand"
+      href="#home"
+      aria-label="Nabin Khanal - go to top of portfolio"
+      (click)="closeMenu()"
+    >
+      Nabin Khanal
+    </a>
+
+    <!--
+      Desktop navigation.
+
+      These links point to sections on the same page instead of
+      navigating to separate Angular routes.
+    -->
+    <nav
+      class="navigation"
+      [class.navigation-open]="menuOpen()"
+      aria-label="Main navigation"
+    >
+      <a href="#about" (click)="closeMenu()">About</a>
+
+      <a href="#projects" (click)="closeMenu()">Projects</a>
+
+      <a href="#contact" (click)="closeMenu()">Contact</a>
+
+      <!--
+        We will replace this with the real ThemeToggle component
+        in the next step.
+      -->
+      <button class="theme-placeholder" type="button">
+        Theme
+      </button>
+    </nav>
+
+    <!--
+      Mobile menu button.
+
+      It is hidden on larger screens by CSS and shown on smaller screens.
+    -->
+    <button
+      class="menu-button"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="
+        menuOpen() ? 'Close navigation menu' : 'Open navigation menu'
+      "
+    >
+      <span
+        class="menu-icon"
+        [class.menu-icon-open]="menuOpen()"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+</header>
