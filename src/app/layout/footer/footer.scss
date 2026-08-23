@@ -1,0 +1,144 @@
+/*
+ * ============================================================
+ * FOOTER
+ * ============================================================
+ */
+
+.site-footer {
+  padding: 3rem 0 2rem;
+
+  background-color: var(--color-background);
+
+  border-top: 1px solid var(--color-border);
+}
+
+
+.footer-container {
+  width: min(100% - 2rem, var(--page-max-width));
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * MAIN FOOTER CONTENT
+ * ============================================================
+ */
+
+.footer-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  padding-bottom: 2rem;
+}
+
+
+.footer-identity h2 {
+  margin: 0 0 0.5rem;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.25rem;
+}
+
+
+.footer-identity p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.6;
+}
+
+
+/*
+ * ============================================================
+ * FOOTER LINKS
+ * ============================================================
+ */
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 1.5rem;
+}
+
+
+.footer-links a {
+  color: var(--color-text-secondary);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 150ms ease;
+}
+
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: var(--color-accent);
+}
+
+
+/*
+ * ============================================================
+ * FOOTER BOTTOM
+ * ============================================================
+ */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--color-border);
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.85rem;
+}
+
+
+/*
+ * ============================================================
+ * MOBILE
+ * ============================================================
+ */
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding-top: 2.5rem;
+  }
+
+
+  .footer-main {
+    flex-direction: column;
+  }
+
+
+  .footer-links {
+    gap: 1rem;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
