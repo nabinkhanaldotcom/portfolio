@@ -13,10 +13,36 @@ describe('About', () => {
 
     fixture = TestBed.createComponent(About);
     component = fixture.componentInstance;
+
     await fixture.whenStable();
   });
 
+
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+
+  it('should display the experience years based on 2018', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    const expectedYears = new Date().getFullYear() - 2018;
+
+    expect(compiled.textContent).toContain(
+      `${expectedYears}+ years of experience`,
+    );
+  });
+
+
+  it('should display the professional title', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain(
+      'Full Stack Software Engineer',
+    );
+
+    expect(compiled.textContent).toContain(
+      'AI/ML Developer',
+    );
   });
 });
