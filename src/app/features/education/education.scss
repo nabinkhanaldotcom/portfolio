@@ -1,0 +1,174 @@
+/*
+ * ============================================================
+ * EDUCATION SECTION
+ * ============================================================
+ */
+
+.education-section {
+  padding: 7rem 0;
+
+  background-color: var(--color-background);
+}
+
+
+.education-container {
+  width: min(100% - 2rem, var(--page-max-width));
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * SECTION HEADING
+ * ============================================================
+ */
+
+.education-heading {
+  max-width: 750px;
+
+  margin-bottom: 3rem;
+}
+
+
+.section-label {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+.education-heading h2 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+/*
+ * ============================================================
+ * EDUCATION CARD
+ * ============================================================
+ */
+
+.education-card {
+  display: flex;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  max-width: 650px;
+
+  padding: 2rem;
+
+  background-color: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+
+.education-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 64px;
+
+  width: 64px;
+  height: 64px;
+
+  font-size: 2rem;
+
+  background-color: var(--color-background);
+
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+
+.education-content h3 {
+  margin: 0 0 0.4rem;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+.education-content p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+
+/*
+ * ============================================================
+ * TABLET
+ * ============================================================
+ */
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 5rem 0;
+  }
+}
+
+
+/*
+ * ============================================================
+ * MOBILE
+ * ============================================================
+ */
+
+@media (max-width: 600px) {
+  .education-section {
+    padding: 4rem 0;
+  }
+
+
+  .education-heading {
+    margin-bottom: 2rem;
+  }
+
+
+  .education-card {
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    padding: 1.25rem;
+  }
+
+
+  .education-icon {
+    flex-basis: 52px;
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.5rem;
+  }
+
+
+  .education-content h3 {
+    font-size: 1.2rem;
+  }
+}
