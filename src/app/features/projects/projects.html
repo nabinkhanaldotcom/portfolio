@@ -1,1 +1,34 @@
-<p>projects works!</p>
+<section class="projects-section" aria-labelledby="projects-title">
+  <div class="projects-container">
+
+    <div class="projects-heading">
+      <p class="section-label">
+        Projects
+      </p>
+
+      <h2 id="projects-title">
+        Things I'm building
+      </h2>
+
+      <p class="section-description">
+        These projects give me a place to experiment with technologies,
+        solve interesting problems, and build things that I find useful
+        or simply fun to work on.
+      </p>
+    </div>
+
+
+    <div class="projects-grid">
+
+      @for (project of projects; track project.title) {
+
+        <app-project-card
+          [project]="project"
+        />
+
+      }
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,115 @@
+/*
+ * ============================================================
+ * PROJECTS SECTION
+ * ============================================================
+ */
+
+.projects-section {
+  padding: 7rem 0;
+
+  background-color: var(--color-background);
+}
+
+
+.projects-container {
+  width: min(100% - 2rem, var(--page-max-width));
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * SECTION HEADING
+ * ============================================================
+ */
+
+.projects-heading {
+  max-width: 800px;
+
+  margin-bottom: 3.5rem;
+}
+
+
+.section-label {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+.projects-heading h2 {
+  margin: 0 0 1rem;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.section-description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/*
+ * ============================================================
+ * PROJECT GRID
+ * ============================================================
+ */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 340px), 1fr)
+  );
+
+  gap: 1.5rem;
+}
+
+
+/*
+ * ============================================================
+ * TABLET / MOBILE
+ * ============================================================
+ */
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 5rem 0;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .projects-section {
+    padding: 4rem 0;
+  }
+
+
+  .projects-heading {
+    margin-bottom: 2.5rem;
+  }
+
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
