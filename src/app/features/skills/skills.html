@@ -1,1 +1,57 @@
-<p>skills works!</p>
+<section class="skills-section" aria-labelledby="skills-title">
+  <div class="skills-container">
+
+    <div class="skills-heading">
+      <p class="section-label">
+        Skills
+      </p>
+
+      <h2 id="skills-title">
+        Technologies I work with
+      </h2>
+
+      <p class="section-description">
+        My background is primarily in enterprise Java and full-stack
+        development, while I continue expanding into Python, applied AI,
+        cloud technologies, and application security.
+      </p>
+    </div>
+
+
+    <div class="skill-category-grid">
+
+      @for (category of skillCategories; track category.title) {
+
+        <article class="skill-category">
+
+          <header class="skill-category-header">
+            <h3>
+              {{ category.title }}
+            </h3>
+
+            <p>
+              {{ category.description }}
+            </p>
+          </header>
+
+
+          <div class="skill-list">
+
+            @for (skill of category.skills; track skill) {
+
+              <span class="skill">
+                {{ skill }}
+              </span>
+
+            }
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </div>
+</section>
