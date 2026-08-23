@@ -115,24 +115,6 @@
 }
 
 
-/*
- * Temporary theme button.
- *
- * In the next step this will be replaced by our ThemeToggle component.
- */
-.theme-placeholder {
-  padding: 0.5rem 0.8rem;
-
-  color: var(--color-text-primary);
-
-  font: inherit;
-
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-
-  cursor: pointer;
-}
 
 
 /*
@@ -253,8 +235,7 @@
   }
 
 
-  .navigation a,
-  .theme-placeholder {
+  .navigation a {
     width: 100%;
 
     padding: 1rem;
@@ -269,6 +250,12 @@
 
 
   .theme-placeholder {
+    margin-top: 0.5rem;
+  }
+
+  app-theme-toggle {
+    width: 100%;
+
     margin-top: 0.5rem;
   }
 }
