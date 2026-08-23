@@ -1,1 +1,27 @@
-<p>theme-toggle works!</p>
+<button
+  class="theme-toggle"
+  type="button"
+  (click)="toggleTheme()"
+  [attr.aria-label]="
+    themeService.isDarkTheme()
+      ? 'Switch to light theme'
+      : 'Switch to dark theme'
+  "
+>
+  <span
+    class="toggle-track"
+    [class.toggle-track-dark]="themeService.isDarkTheme()"
+    aria-hidden="true"
+  >
+    <span class="toggle-thumb"></span>
+  </span>
+
+
+  <span class="theme-label">
+    @if (themeService.isDarkTheme()) {
+      Light
+    } @else {
+      Dark
+    }
+  </span>
+</button>
