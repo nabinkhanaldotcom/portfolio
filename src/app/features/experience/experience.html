@@ -1,1 +1,101 @@
-<p>experience works!</p>
+<section class="experience-section" aria-labelledby="experience-title">
+  <div class="experience-container">
+
+    <div class="experience-heading">
+      <p class="section-label">
+        Experience
+      </p>
+
+      <h2 id="experience-title">
+        Building software across enterprise environments
+      </h2>
+
+      <p class="section-description">
+        My experience has taken me through government, financial services,
+        and insurance applications, working across backend development,
+        frontend development, databases, integrations, deployment, and
+        production support.
+      </p>
+    </div>
+
+
+    <div class="experience-timeline">
+
+      @for (experience of experiences; track experience.client + experience.period) {
+
+        <article class="experience-item">
+
+          <div class="timeline-marker" aria-hidden="true"></div>
+
+
+          <div class="experience-card">
+
+            <header class="experience-card-header">
+
+              <div>
+                <h3>
+                  {{ experience.role }}
+                </h3>
+
+                <p class="experience-client">
+                  {{ experience.client }}
+                </p>
+              </div>
+
+
+              <div class="experience-meta">
+                <span>
+                  {{ experience.period }}
+                </span>
+
+                <span>
+                  {{ experience.location }}
+                </span>
+              </div>
+
+            </header>
+
+
+            <p class="experience-summary">
+              {{ experience.summary }}
+            </p>
+
+
+            <ul class="experience-highlights">
+
+              @for (highlight of experience.highlights; track highlight) {
+
+                <li>
+                  {{ highlight }}
+                </li>
+
+              }
+
+            </ul>
+
+
+            <div
+              class="technology-list"
+              aria-label="Technologies used in this role"
+            >
+
+              @for (technology of experience.technologies; track technology) {
+
+                <span class="technology">
+                  {{ technology }}
+                </span>
+
+              }
+
+            </div>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </div>
+</section>
