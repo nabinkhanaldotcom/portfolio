@@ -1,0 +1,258 @@
+/*
+ * ============================================================
+ * CONTACT SECTION
+ * ============================================================
+ */
+
+.contact-section {
+  padding: 7rem 0;
+
+  background-color: var(--color-surface);
+}
+
+
+.contact-container {
+  width: min(100% - 2rem, var(--page-max-width));
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * SECTION HEADING
+ * ============================================================
+ */
+
+.contact-heading {
+  max-width: 800px;
+
+  margin-bottom: 3.5rem;
+}
+
+
+.section-label {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+.contact-heading h2 {
+  margin: 0 0 1rem;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.section-description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/*
+ * ============================================================
+ * CONTACT GRID
+ * ============================================================
+ */
+
+.contact-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+
+  gap: 1.25rem;
+}
+
+
+/*
+ * ============================================================
+ * CONTACT CARD
+ * ============================================================
+ */
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 220px;
+
+  padding: 1.75rem;
+
+  background-color: var(--color-background);
+
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+
+.contact-card:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--color-accent);
+
+  box-shadow: 0 12px 30px rgb(0 0 0 / 8%);
+}
+
+
+.contact-label {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+.contact-card h3 {
+  margin: 0;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.15rem;
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+
+/*
+ * ============================================================
+ * CONTACT ACTION
+ * ============================================================
+ */
+
+.contact-action {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-top: 2rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.contact-action span {
+  transition: transform 150ms ease;
+}
+
+
+.contact-action:hover span {
+  transform: translateX(4px);
+}
+
+
+/*
+ * ============================================================
+ * FUTURE CONTACT FORM NOTE
+ * ============================================================
+ */
+
+.contact-future-note {
+  max-width: 700px;
+
+  margin-top: 2rem;
+}
+
+
+.contact-future-note p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+
+/*
+ * ============================================================
+ * TABLET
+ * ============================================================
+ */
+
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 5rem 0;
+  }
+
+
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/*
+ * ============================================================
+ * MOBILE
+ * ============================================================
+ */
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+
+  .contact-heading {
+    margin-bottom: 2.5rem;
+  }
+
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .contact-card {
+    min-height: auto;
+
+    padding: 1.25rem;
+  }
+
+
+  .section-description {
+    font-size: 1rem;
+  }
+}

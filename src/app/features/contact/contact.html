@@ -1,1 +1,69 @@
-<p>contact works!</p>
+<section class="contact-section" aria-labelledby="contact-title">
+  <div class="contact-container">
+
+    <div class="contact-heading">
+      <p class="section-label">
+        Contact
+      </p>
+
+      <h2 id="contact-title">
+        Let's connect
+      </h2>
+
+      <p class="section-description">
+        Whether you want to talk software development, AI, application
+        security, collaborate on an interesting project, or simply share
+        an idea, I'm always happy to connect with people who enjoy
+        learning and building things.
+      </p>
+    </div>
+
+
+    <div class="contact-grid">
+
+      @for (contact of contactLinks; track contact.label) {
+
+        <article class="contact-card">
+
+          <div class="contact-card-content">
+
+            <p class="contact-label">
+              {{ contact.label }}
+            </p>
+
+            <h3>
+              {{ contact.value }}
+            </h3>
+
+          </div>
+
+
+          <a
+            class="contact-action"
+            [href]="contact.url"
+            [attr.target]="contact.external ? '_blank' : null"
+            [attr.rel]="contact.external ? 'noopener noreferrer' : null"
+          >
+            {{ contact.actionLabel }}
+
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </article>
+
+      }
+
+    </div>
+
+
+    <div class="contact-future-note">
+      <p>
+        Have something specific you'd like to discuss? A direct message
+        form will be added here in a future version of the portfolio.
+      </p>
+    </div>
+
+  </div>
+</section>
