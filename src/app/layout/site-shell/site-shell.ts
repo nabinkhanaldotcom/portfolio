@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 
-import { Hero } from '../../features/hero/hero';
 import { About } from '../../features/about/about';
 import { Experience } from '../../features/experience/experience';
 import { Education } from '../../features/education/education';
@@ -15,7 +14,6 @@ import { Contact } from '../../features/contact/contact';
   selector: 'app-site-shell',
   imports: [
     Header,
-    Hero,
     About,
     Experience,
     Education,
