@@ -1,0 +1,125 @@
+import { WorkExperience } from '../models/work-experience';
+
+export const WORK_EXPERIENCE: WorkExperience[] = [
+  {
+    client: 'SRPMIC',
+    location: 'Scottsdale, AZ',
+    role: 'Full Stack Java Developer',
+    period: 'September 2022 – Present',
+    summary:
+      'Designing, developing, and maintaining enterprise case-management and legal-process applications.',
+    highlights: [
+      'Build backend services, controllers, business logic, database integrations, and user-interface features using Java, Spring Boot, Spring MVC, Thymeleaf, JavaScript, jQuery, and AJAX.',
+      'Develop REST APIs and integrate backend services with Angular and browser-based clients.',
+      'Work with MyBatis, complex SQL, and SSRS reporting while troubleshooting production-level issues.',
+      'Work with Spring Security, Docker, GitLab, Maven, Docmosis, and iText as part of application development and delivery.',
+    ],
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Spring MVC',
+      'Angular',
+      'Thymeleaf',
+      'MyBatis',
+      'SQL',
+      'Docker',
+      'Git',
+    ],
+  },
+  {
+    client: 'USAA',
+    location: 'Austin, TX',
+    role: 'Full Stack Java Developer (Lead)',
+    period: 'March 2021 – May 2022',
+    summary:
+      'Worked on modernizing a monolithic application into a microservice-based architecture while providing technical leadership to the development team.',
+    highlights: [
+      'Developed and enhanced Java and Spring Boot microservices, including User, Search, and Report services.',
+      'Managed and supported an offshore development team with technical guidance, knowledge transfer, and project coordination.',
+      'Worked with Docker and Kubernetes as part of microservice deployment.',
+      'Implemented and worked with application-security tooling including X-Ray, Twistlock, and Conjur.',
+    ],
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Microservices',
+      'MySQL',
+      'Docker',
+      'Kubernetes',
+      'Git',
+      'Maven',
+      'JUnit',
+    ],
+  },
+  {
+    client: 'U.S. Bank',
+    location: 'Minneapolis, MN',
+    role: 'Full Stack Java Developer',
+    period: 'July 2019 – February 2021',
+    summary:
+      'Developed full-stack banking applications across the frontend, REST services, microservices, database integration, and production support.',
+    highlights: [
+      'Developed reusable Angular 7 UI components using HTML5, CSS, Bootstrap, JavaScript, and custom directives.',
+      'Designed and developed REST APIs and services for communication between microservices and frontend applications.',
+      'Worked with Spring Security, Spring JDBC, MySQL, and Apache Kafka.',
+      'Created unit tests and supported production environments by investigating defects and implementing fixes.',
+    ],
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Angular',
+      'Kafka',
+      'Spring JDBC',
+      'MySQL',
+      'JUnit',
+      'Jenkins',
+    ],
+  },
+  {
+    client: 'Capital One',
+    location: 'Rolling Meadows, IL',
+    role: 'Full Stack Java Developer',
+    period: 'August 2018 – June 2019',
+    summary:
+      'Built responsive full-stack financial applications using Angular, Java, Spring Boot, REST services, AWS, and relational databases.',
+    highlights: [
+      'Developed responsive frontend functionality using Angular 4, HTML5, CSS, Bootstrap, and JavaScript.',
+      'Developed REST APIs with JAX-RS and Spring Boot and used Hibernate for database communication.',
+      'Worked with Java concepts including multithreading, concurrency, exception handling, and collections.',
+      'Used AWS EC2, S3, Application Load Balancer, Jenkins, Maven, Mockito, and Tomcat as part of development and deployment.',
+    ],
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'Angular',
+      'JAX-RS',
+      'Hibernate',
+      'AWS',
+      'MySQL',
+      'Jenkins',
+    ],
+  },
+  {
+    client: 'Nationwide Insurance',
+    location: 'Scottsdale, AZ',
+    role: 'Full Stack Java Developer',
+    period: 'January 2018 – August 2018',
+    summary:
+      'Worked across the software-development lifecycle building backend and frontend functionality for insurance applications.',
+    highlights: [
+      'Developed frontend functionality using HTML, JavaScript, AJAX, and CSS.',
+      'Integrated controllers, services, and data layers using Spring Boot and annotation-based configuration.',
+      'Developed REST-based business logic and used JDBC and SQL for database access.',
+      'Worked with WebLogic, Log4J, Eclipse, and JUnit for deployment, logging, development, and testing.',
+    ],
+    technologies: [
+      'Java',
+      'Spring Boot',
+      'REST',
+      'JDBC',
+      'SQL',
+      'JavaScript',
+      'JUnit',
+    ],
+  },
+];

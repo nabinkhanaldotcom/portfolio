@@ -1,0 +1,315 @@
+/*
+ * ============================================================
+ * EXPERIENCE SECTION
+ * ============================================================
+ */
+
+.experience-section {
+  padding: 7rem 0;
+
+  background-color: var(--color-surface);
+}
+
+
+.experience-container {
+  width: min(100% - 2rem, var(--page-max-width));
+
+  margin: 0 auto;
+}
+
+
+/*
+ * ============================================================
+ * SECTION HEADING
+ * ============================================================
+ */
+
+.experience-heading {
+  max-width: 800px;
+
+  margin-bottom: 4rem;
+}
+
+
+.section-label {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.85rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+.experience-heading h2 {
+  margin: 0 0 1rem;
+
+  color: var(--color-text-primary);
+
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.section-description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+}
+
+
+/*
+ * ============================================================
+ * TIMELINE
+ * ============================================================
+ */
+
+.experience-timeline {
+  position: relative;
+
+  padding-left: 2rem;
+}
+
+
+/*
+ * Vertical timeline line.
+ */
+.experience-timeline::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 7px;
+
+  width: 2px;
+
+  background-color: var(--color-border);
+}
+
+
+.experience-item {
+  position: relative;
+
+  padding-bottom: 2rem;
+}
+
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+
+/*
+ * Timeline circle for each role.
+ */
+.timeline-marker {
+  position: absolute;
+
+  top: 1.8rem;
+  left: calc(-2rem + 1px);
+
+  width: 14px;
+  height: 14px;
+
+  background-color: var(--color-accent);
+
+  border: 3px solid var(--color-surface);
+  border-radius: 50%;
+}
+
+
+/*
+ * ============================================================
+ * EXPERIENCE CARD
+ * ============================================================
+ */
+
+.experience-card {
+  padding: 2rem;
+
+  background-color: var(--color-background);
+
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+}
+
+
+.experience-card-header {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  margin-bottom: 1.5rem;
+}
+
+
+.experience-card h3 {
+  margin: 0 0 0.35rem;
+
+  color: var(--color-text-primary);
+
+  font-size: 1.3rem;
+}
+
+
+.experience-client {
+  margin: 0;
+
+  color: var(--color-accent);
+
+  font-weight: 600;
+}
+
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.35rem;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.9rem;
+
+  text-align: right;
+}
+
+
+.experience-summary {
+  margin: 0 0 1.5rem;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+.experience-highlights {
+  margin: 0 0 1.75rem;
+  padding-left: 1.25rem;
+
+  color: var(--color-text-secondary);
+}
+
+
+.experience-highlights li {
+  margin-bottom: 0.75rem;
+
+  line-height: 1.65;
+}
+
+
+.experience-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+ * ============================================================
+ * TECHNOLOGY TAGS
+ * ============================================================
+ */
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+
+.technology {
+  padding: 0.4rem 0.7rem;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+
+/*
+ * ============================================================
+ * TABLET / MOBILE
+ * ============================================================
+ */
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 5rem 0;
+  }
+
+
+  .experience-heading {
+    margin-bottom: 3rem;
+  }
+
+
+  .experience-card-header {
+    flex-direction: column;
+
+    gap: 0.75rem;
+  }
+
+
+  .experience-meta {
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .experience-section {
+    padding: 4rem 0;
+  }
+
+
+  .experience-timeline {
+    padding-left: 1.5rem;
+  }
+
+
+  .experience-timeline::before {
+    left: 5px;
+  }
+
+
+  .timeline-marker {
+    left: calc(-1.5rem + 1px);
+
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .experience-card {
+    padding: 1.25rem;
+  }
+
+
+  .experience-card h3 {
+    font-size: 1.15rem;
+  }
+
+
+  .section-description,
+  .experience-summary,
+  .experience-highlights {
+    font-size: 0.95rem;
+  }
+}
