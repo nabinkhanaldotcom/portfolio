@@ -8,7 +8,6 @@ describe('ThemeToggle', () => {
   let fixture: ComponentFixture<ThemeToggle>;
   let themeService: ThemeService;
 
-
   beforeEach(async () => {
     localStorage.clear();
 
@@ -33,7 +32,12 @@ describe('ThemeToggle', () => {
   });
 
 
-  it('should toggle the theme when clicked', () => {
+  it('should start in dark mode', () => {
+    expect(themeService.theme()).toBe('dark');
+  });
+
+
+  it('should toggle from dark to light when clicked', () => {
     const compiled =
       fixture.nativeElement as HTMLElement;
 
@@ -42,10 +46,10 @@ describe('ThemeToggle', () => {
         '.theme-toggle',
       ) as HTMLButtonElement;
 
-    expect(themeService.theme()).toBe('light');
+    expect(themeService.theme()).toBe('dark');
 
     button.click();
 
-    expect(themeService.theme()).toBe('dark');
+    expect(themeService.theme()).toBe('light');
   });
 });

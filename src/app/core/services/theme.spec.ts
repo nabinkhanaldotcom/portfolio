@@ -5,7 +5,6 @@ import { ThemeService } from './theme';
 describe('ThemeService', () => {
   let service: ThemeService;
 
-
   beforeEach(() => {
     localStorage.clear();
 
@@ -24,20 +23,7 @@ describe('ThemeService', () => {
   });
 
 
-  it('should start in light mode when no theme is saved', () => {
-    expect(service.theme()).toBe('light');
-
-    expect(
-      document.documentElement.getAttribute(
-        'data-theme',
-      ),
-    ).toBe('light');
-  });
-
-
-  it('should switch to dark mode', () => {
-    service.toggleTheme();
-
+  it('should start in dark mode when no theme is saved', () => {
     expect(service.theme()).toBe('dark');
 
     expect(
@@ -48,7 +34,29 @@ describe('ThemeService', () => {
   });
 
 
-  it('should remember the selected theme', () => {
+  it('should switch from dark to light mode', () => {
+    service.toggleTheme();
+
+    expect(service.theme()).toBe('light');
+
+    expect(
+      document.documentElement.getAttribute(
+        'data-theme',
+      ),
+    ).toBe('light');
+  });
+
+
+  it('should remember light mode', () => {
+    service.setTheme('light');
+
+    expect(
+      localStorage.getItem('portfolio-theme'),
+    ).toBe('light');
+  });
+
+
+  it('should remember dark mode', () => {
     service.setTheme('dark');
 
     expect(

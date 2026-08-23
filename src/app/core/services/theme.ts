@@ -8,73 +8,56 @@ export type Theme = 'light' | 'dark';
 })
 export class ThemeService {
   /*
-   * The browser document lets us set an attribute on the root
-   * <html> element:
-   *
-   * <html data-theme="light">
-   *
-   * or
-   *
-   * <html data-theme="dark">
+   * Gives us access to the root HTML document.
    */
   private readonly document = inject(DOCUMENT);
 
   /*
-   * localStorage key used to remember the visitor's selection.
+   * Browser storage key used to remember the selected theme.
    */
   private readonly storageKey = 'portfolio-theme';
 
-
   /*
-   * Internal writable theme state.
+   * If the visitor already selected a theme, use it.
    *
-   * Components outside this service should not directly change it.
+   * Otherwise the portfolio starts in dark mode.
    */
   private readonly themeState = signal<Theme>(
     this.getSavedTheme(),
   );
 
-
   /*
-   * Read-only theme value that other components can observe.
+   * Read-only theme state exposed to components.
    */
   readonly theme = this.themeState.asReadonly();
 
-
   /*
-   * Derived Signal.
-   *
-   * true  = dark theme
-   * false = light theme
+   * Derived state used by the theme toggle.
    */
   readonly isDarkTheme = computed(
     () => this.themeState() === 'dark',
   );
 
-
   constructor() {
-    /*
-     * Apply the remembered theme as soon as this service starts.
-     */
     this.applyTheme(this.themeState());
   }
 
 
   /*
-   * Switches between light and dark mode.
+   * Switch between dark and light.
    */
   toggleTheme(): void {
     const newTheme: Theme =
-      this.themeState() === 'light'
-        ? 'dark'
-        : 'light';
+      this.themeState() === 'dark'
+        ? 'light'
+        : 'dark';
 
     this.setTheme(newTheme);
   }
 
 
   /*
-   * Changes the theme and remembers the visitor's choice.
+   * Update the theme and remember the visitor's choice.
    */
   setTheme(theme: Theme): void {
     this.themeState.set(theme);
@@ -89,22 +72,30 @@ export class ThemeService {
 
 
   /*
-   * Reads a previously saved theme.
+   * If Light was explicitly saved, use Light.
    *
-   * If there is no saved theme, the site starts in light mode.
+   * Otherwise use Dark.
+   *
+   * This means Dark is the default for a first-time visitor.
    */
   private getSavedTheme(): Theme {
     const savedTheme =
       localStorage.getItem(this.storageKey);
 
-    return savedTheme === 'dark'
-      ? 'dark'
-      : 'light';
+    return savedTheme === 'light'
+      ? 'light'
+      : 'dark';
   }
 
 
   /*
-   * Applies the theme to the root HTML element.
+   * Applies:
+   *
+   * <html data-theme="dark">
+   *
+   * or:
+   *
+   * <html data-theme="light">
    */
   private applyTheme(theme: Theme): void {
     this.document.documentElement.setAttribute(
