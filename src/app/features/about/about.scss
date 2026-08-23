@@ -20,27 +20,31 @@
 
 /*
  * ============================================================
- * SECTION HEADING
+ * ABOUT HEADING
  * ============================================================
  */
 
 .about-heading {
-  max-width: 850px;
+  max-width: 900px;
 
   margin-bottom: 3rem;
 }
 
 
-.section-label {
-  margin: 0 0 0.75rem;
+.about-introduction {
+  margin: 0 0 1rem;
 
+  color: var(--color-text-secondary);
+
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+
+.about-introduction span {
   color: var(--color-accent);
 
-  font-size: 0.85rem;
   font-weight: 700;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 
@@ -63,7 +67,7 @@
 
 /*
  * ============================================================
- * ABOUT TEXT
+ * ABOUT CONTENT
  * ============================================================
  */
 

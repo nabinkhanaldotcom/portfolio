@@ -23,19 +23,23 @@ describe('About', () => {
   });
 
 
-  it('should display the experience years based on 2018', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
-
-    const expectedYears = new Date().getFullYear() - 2018;
+  it('should display my name', () => {
+    const compiled =
+      fixture.nativeElement as HTMLElement;
 
     expect(compiled.textContent).toContain(
-      `${expectedYears}+ years of experience`,
+      "Hello, I'm",
+    );
+
+    expect(compiled.textContent).toContain(
+      'Nabin Khanal',
     );
   });
 
 
   it('should display the professional title', () => {
-    const compiled = fixture.nativeElement as HTMLElement;
+    const compiled =
+      fixture.nativeElement as HTMLElement;
 
     expect(compiled.textContent).toContain(
       'Full Stack Software Engineer',
@@ -43,6 +47,33 @@ describe('About', () => {
 
     expect(compiled.textContent).toContain(
       'AI/ML Developer',
+    );
+  });
+
+
+  it('should display experience based on 2018', () => {
+    const compiled =
+      fixture.nativeElement as HTMLElement;
+
+    const expectedYears =
+      new Date().getFullYear() - 2018;
+
+    expect(compiled.textContent).toContain(
+      `${expectedYears}+ years of experience`,
+    );
+  });
+
+
+  it('should display the full stack Java developer highlight', () => {
+    const compiled =
+      fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain(
+      'Full Stack Java Developer',
+    );
+
+    expect(compiled.textContent).toContain(
+      'Java, Angular, Thymeleaf',
     );
   });
 });
