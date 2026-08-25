@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
       'SQLite',
       'FFmpeg',
     ],
-    projectUrl: '/voice',
+    projectUrl: '/voice-conversion/',
     githubUrl:
       'https://github.com/nabinkhanaldotcom/nepali-voicce-assistant',
     status: 'Live',
